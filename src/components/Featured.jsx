@@ -17,10 +17,6 @@ const Featured = () => {
               .map((book) => (
                 <Book book={book} key={book.id}/>
               ))}
-            <Book />
-            <Book />
-            <Book />
-            <Book />
           </div>
         </div>
       </div>
