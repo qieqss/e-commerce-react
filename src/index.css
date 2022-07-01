@@ -384,15 +384,16 @@ FEATURED
 }
 
 .book__img {
-  max-height: 320px;
-  max-width: 250px;
+  width: 100%;
+  max-width: 200px;
+  height: 250px;
   transition: all 300ms ease;
 }
 
 .book__img--skeleton {
   width: 100%;
-  max-width: 250px;
-  height: 320px;
+  max-width: 200px;
+  height: 250px;
   background-color: rgb(204, 204, 204);
   margin-bottom: 8px;
 }
@@ -429,6 +430,8 @@ FEATURED
 }
 
 .book__title {
+  width: 100%;
+  max-width: 200px;
   font-size: 20px;
   margin-bottom: 8px;
 }
