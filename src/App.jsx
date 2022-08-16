@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react"
-import "./index.css"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { books } from "./data"
-import Nav from "./components/Nav"
-import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import Books from "./pages/Books"
-import BookInfo from "./pages/BookInfo"
-import Cart from "./pages/Cart"
+import React, { useEffect, useState } from "react";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { books } from "./data";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import BookInfo from "./pages/BookInfo";
+import Cart from "./pages/Cart";
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
 
   function addToCart(book) {
-    setCart([...cart, { ...book, quantity: 1 }])
+    setCart([...cart, { ...book, quantity: 1 }]);
   }
 
   function changeQuantity(book, quantity) {
@@ -26,23 +26,24 @@ function App() {
             }
           : item
       )
-    )
+    );
   }
 
   function removeItem(item) {
-    setCart(cart.filter(book => book.id !== item.id))
+    setCart(cart.filter((book) => book.id !== item.id));
   }
 
   function numberOfItems() {
-    let counter = 0
-    cart.forEach(item => {
-      counter += item.quantity
-    }); return counter
+    let counter = 0;
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
+    return counter;
   }
 
   useEffect(() => {
-    console.log(cart)
-  }, [cart])
+    console.log(cart);
+  }, [cart]);
 
   // const dupeItem = cart.find((item) => +item.id === +book.id)
   //   if (dupeItem) {
@@ -63,13 +64,13 @@ function App() {
   //   }
 
   useEffect(() => {
-    console.log(cart)
-  }, [cart])
+    console.log(cart);
+  }, [cart]);
 
   return (
     <Router>
       <div className="App">
-        <Nav numberOfItems={numberOfItems()}/>
+        <Nav numberOfItems={numberOfItems()} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books books={books} />} />
@@ -82,14 +83,19 @@ function App() {
           <Route
             path="/cart"
             element={
-              <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>
+              <Cart
+                books={books}
+                cart={cart}
+                changeQuantity={changeQuantity}
+                removeItem={removeItem}
+              />
             }
           />
         </Routes>
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
