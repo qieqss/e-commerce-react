@@ -41,10 +41,6 @@ function App() {
     return counter;
   }
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   // const dupeItem = cart.find((item) => +item.id === +book.id)
   //   if (dupeItem) {
   //     setCart(
@@ -62,10 +58,6 @@ function App() {
   //   } else {
   //     setCart([...cart, { ...book, quantity: 1 }])
   //   }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <Router>

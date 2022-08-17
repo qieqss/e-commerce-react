@@ -406,6 +406,7 @@ FEATURED
 .book__title--skeleton {
   height: 21px;
   width: 100%;
+  max-width: 200px;
 }
 
 .book__rating--skeleton {
